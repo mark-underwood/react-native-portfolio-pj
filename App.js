@@ -7,6 +7,7 @@ import MainUnit from './components/MainUnit';
 import RightController from './components/RightController';
 
 export default function App() {
+  // https://blog.logrocket.com/managing-orientation-changes-react-native-apps/
   const [orientation, setOrientation] = useState(null);
   useEffect(() => {
     checkOrientation();
@@ -45,7 +46,6 @@ const styles = StyleSheet.create({
   vertical: {
     flex: 1,
     flexDirection: 'column',
-    color: 'white',
     backgroundColor: '#1a1a1a',
     alignItems: 'center',
     justifyContent: 'center',
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
   horizontal: {
     flex: 1,
     flexDirection: 'row',
-    color: 'white',
     backgroundColor: '#1a1a1a',
     alignItems: 'center',
     justifyContent: 'top',
