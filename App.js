@@ -1,12 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import * as ScreenOrientation from "expo-screen-orientation";
-import { StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, Appearance } from 'react-native';
+import Constants from 'expo-constants';
 import LeftController from './things/LeftController';
 import MainUnit from './things/MainUnit';
 import RightController from './things/RightController';
 
 export default function App() {
+  // Always use dark mode
+  // https://stackoverflow.com/questions/64551683/how-to-force-disable-android-dark-mode-in-react-native
+
+  useEffect(() => Appearance.setColorScheme('dark'), []); // the app must always be dark mode
+
+  // Reference for Screen Orientation:
   // https://blog.logrocket.com/managing-orientation-changes-react-native-apps/
   const [orientation, setOrientation] = useState(null);
   useEffect(() => {
@@ -42,9 +49,14 @@ export default function App() {
   );
 }
 
+// // The following line with ternary operator is adapted from
+// // React Native Nucampsite project.
+// paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight
+
 const styles = StyleSheet.create({
   vertical: {
     flex: 1,
+    paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight,
     flexDirection: 'column',
     backgroundColor: '#1a1a1a',
     alignItems: 'center',

@@ -1,9 +1,11 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { View, Text } from 'react-native';
 
 const MainUnit = () => {
   return (
-    <Text>MainUnit</Text>
+    <View>
+      <Text style={{color: "white"}}>| MainUnit |</Text>
+    </View>
   );
 };
 

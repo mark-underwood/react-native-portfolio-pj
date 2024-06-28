@@ -1,9 +1,11 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { View, Text } from 'react-native';
 
 const LeftController = () => {
   return (
-    <Text>LeftController</Text>
+    <View style={{backgroundColor: "#370d11"}}>
+      <Text style={{color: "white"}}>\ LeftController \</Text>
+    </View>
   );
 };
 
