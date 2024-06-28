@@ -2,9 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import * as ScreenOrientation from "expo-screen-orientation";
 import { StyleSheet, Text, View } from 'react-native';
-import LeftController from './components/LeftController';
-import MainUnit from './components/MainUnit';
-import RightController from './components/RightController';
+import LeftController from './things/LeftController';
+import MainUnit from './things/MainUnit';
+import RightController from './things/RightController';
 
 export default function App() {
   // https://blog.logrocket.com/managing-orientation-changes-react-native-apps/
