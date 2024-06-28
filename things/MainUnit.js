@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 
 const MainUnit = () => {
   return (
-    <View>
+    <View style={{backgroundColor: "#000"}}>
       <Text style={{color: "white"}}>| MainUnit |</Text>
     </View>
   );
