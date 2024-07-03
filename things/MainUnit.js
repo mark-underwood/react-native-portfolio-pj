@@ -2,48 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
 import { useSelector } from "react-redux";
 import {
-  actionButtonsReducer, sLeft, sUp, eUp, eRight
+  sLeft, sUp, eUp, eRight
 } from '../components/actionButtons/actionButtonsSlice';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { NavigationContainer } from '@react-navigation/native'
 
 const MainUnit = () => {
-    // const stateAll = useSelector(
-    //   (state) => state
-    // );
-    // const actionButtonState = useSelector(
-    //   (state) => state.actionButtons
-    // );
-  // const [sLeft, setSLeft] = useState(false)
-  // const { sLeft, sUp, eUp, eRight } = useSelector((state) => state.action.sLeft);
-  // const sLeft = useSelector((state) => state.action.sLeft);
-
-  // const [sUp, setSUp] = useState(false)
-  // const sUp = useSelector((state) => state.action.sLeft);
-
-  // const [eUp, setEUp] = useState(false)
-  // const eUp = useSelector((state) => state.action.eUp);
-
-  // const [eRight, setERight] = useState(false)
-  // const eRight = useSelector((state) => state.action.eRight);
-
-    // const sLeftState = useSelector(
-    //   (state) => state.actionButtons.sLeft
-    // );
-    // const sUpState = useSelector(
-    //   (state) => state.actionButtons.sUp
-    // );
-    // const eUpState = useSelector(
-    //   (state) => state.actionButtons.eUp
-    // );
-    // const eRightState = useSelector(
-    //   (state) => state.actionButtons.eRight
-    // );
-  // // these worked:
-  // console.log(buttons.sLeft);
-  // console.log(buttons.sUp);
-  // console.log(buttons.eUp);
-  // console.log(buttons.eRight);
+  const { sLeft, sUp, eUp, eRight } = useSelector((state) => state.actionButtons);
+  // console.log(typeof sLeft);
+  // console.log(typeof sUp);
+  // console.log(typeof eUp);
+  // console.log(typeof eRight);
 
   return (
     <View style={{
@@ -61,7 +30,9 @@ const MainUnit = () => {
         <View style={{
           flex: 1,
           flexDirection:'row',
-          alignSelf: 'center'}}>
+          alignSelf: 'center',
+          justifyContent: 'center'
+          }}>
         <Text style={{color: sLeft ? "gold" : "gray"}}>
           {`sLeft is ${sLeft}`}
         </Text>
