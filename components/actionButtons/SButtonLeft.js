@@ -1,22 +1,20 @@
-import { Text, Pressable } from 'react-native';
+import { Button, ImageBackground, Pressable, Text } from 'react-native';
 import { useDispatch } from "react-redux"; // send button actions to redux store
 import { updateButtonSLeft } from './actionButtonsSlice';
-import styles from './styles';
+import ActionButton from './ActionButton';
+import { styles, props } from './actionButtonStyles';
 
 const SButtonLeft = () => {
+    const title = 'L';
     const dispatch = useDispatch();
-    // const sLeftAct = () => dispatch(updateButtonSLeft({ sLeft: true }));
-    // const sLeftOff = () => dispatch(updateButtonSLeft({ sLeft: false }));
 
     return (
         <Pressable
-            // onPressIn={sLeftAct}
-            // onPressOut={sLeftOff}
             onPressIn={() => dispatch(updateButtonSLeft(true))}
             onPressOut={() => dispatch(updateButtonSLeft(false))}
             style={styles.actionButtons}
         >
-            <Text>L</Text>
+            <ActionButton title={title} />
         </Pressable>
     )
 };

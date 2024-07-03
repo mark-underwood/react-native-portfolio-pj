@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
 import { useSelector } from "react-redux";
-import {
-  sLeft, sUp, eUp, eRight
-} from '../components/actionButtons/actionButtonsSlice';
-import EStyleSheet from 'react-native-extended-stylesheet';
+// import {
+//   sLeft, sUp, eUp, eRight
+// } from '../components/actionButtons/actionButtonsSlice';
+// import EStyleSheet from 'react-native-extended-stylesheet';
 import { NavigationContainer } from '@react-navigation/native'
 
 const MainUnit = () => {
@@ -34,19 +34,19 @@ const MainUnit = () => {
           justifyContent: 'center'
           }}>
         <Text style={{color: sLeft ? "gold" : "gray"}}>
-          {`sLeft is ${sLeft}`}
+          {`sLeft: ${sLeft ? 'Y' : 'N' }`}
         </Text>
         <Text style={{color: "white"}}> | </Text>
         <Text style={{color: sUp ? "gold" : "gray"}}>
-          {`sUp is ${sUp}`}
+          {`sUp: ${sUp ? 'Y' : 'N' }`}
         </Text>
         <Text style={{color: "white"}}> | </Text>
         <Text style={{color: eUp ? "gold" : "gray"}}>
-          {`eUp is ${eUp}`}
+          {`eUp: ${eUp ? 'Y' : 'N' }`}
         </Text>
         <Text style={{color: "white"}}> | </Text>
         <Text style={{color: eRight ? "gold" : "gray"}}>
-          {`eRight ${eRight}`}
+          {`eRight: ${eRight ? 'Y' : 'N' }`}
         </Text>
         </View>
         <NavigationContainer overflow='hidden'>

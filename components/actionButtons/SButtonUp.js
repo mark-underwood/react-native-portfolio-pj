@@ -1,22 +1,20 @@
-import { Text, Pressable } from 'react-native';
+import { Button, ImageBackground, Pressable, Text } from 'react-native';
 import { useDispatch } from "react-redux"; // send button actions to redux store
 import { updateButtonSUp } from './actionButtonsSlice';
-import styles from './styles';
+import ActionButton from './ActionButton';
+import { styles, props } from './actionButtonStyles';
 
 const SButtonUp = () => {
+    const title = 'U';
     const dispatch = useDispatch();
-    // const sUpAct = () => dispatch(updateButtonSUp({ sUp: true }));
-    // const sUpOff = () => dispatch(updateButtonSUp({ sUp: false }));
-
+    
     return (
         <Pressable
-            // onPressIn={sUpAct}
-            // onPressOut={sUpOff}
             onPressIn={() => dispatch(updateButtonSUp(true))}
             onPressOut={() => dispatch(updateButtonSUp(false))}
             style={styles.actionButtons}
         >
-            <Text>U</Text>
+            <ActionButton title={title} />
         </Pressable>
     )
 };

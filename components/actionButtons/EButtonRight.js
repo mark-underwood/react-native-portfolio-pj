@@ -1,22 +1,20 @@
-import { Text, Pressable } from 'react-native';
+import { Button, ImageBackground, Pressable, Text } from 'react-native';
 import { useDispatch } from "react-redux"; // send button actions to redux store
 import { updateButtonERight } from './actionButtonsSlice';
-import styles from './styles';
+import ActionButton from './ActionButton';
+import { styles, props } from './actionButtonStyles';
 
 const EButtonRight = () => {
+    const title = 'R';
     const dispatch = useDispatch();
-    // const eRightAct = () => dispatch(updateButtonERight({ eRight: true }));
-    // const eRightOff = () => dispatch(updateButtonERight({ eRight: false }));
-
+    
     return (
         <Pressable
-            // onPressIn={eRightAct}
-            // onPressOut={eRightOff}
             onPressIn={() => dispatch(updateButtonERight(true))}
             onPressOut={() => dispatch(updateButtonERight(false))}
             style={styles.actionButtons}
         >
-            <Text>R</Text>
+            <ActionButton title={title} />
         </Pressable>
     )
 }
