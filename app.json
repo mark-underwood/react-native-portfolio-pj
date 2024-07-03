@@ -1,7 +1,14 @@
 {
   "expo": {
-    "name": "portfolio-project",
-    "slug": "portfolio-project",
-    "version": "1.0.0"
+    "name": "reactNative-portfolio-pj",
+    "slug": "reactNative-portfolio-pj",
+    "version": "1.0.0",
+    "userInterfaceStyle": "dark",
+    "android": {
+      "userInterfaceStyle": "dark"
+    },
+    "ios": {
+      "userInterfaceStyle": "dark"
+    }
   }
 }
