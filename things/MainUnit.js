@@ -7,22 +7,26 @@ import { useSelector } from "react-redux";
 // import EStyleSheet from 'react-native-extended-stylesheet';
 import { NavigationContainer } from '@react-navigation/native'
 
-const MainUnit = () => {
+const MainUnit = (props) => {
+  const { isLandscape } = props;
   const { sLeft, sUp, eUp, eRight } = useSelector((state) => state.actionButtons);
-  // console.log(typeof sLeft);
-  // console.log(typeof sUp);
-  // console.log(typeof eUp);
-  // console.log(typeof eRight);
+
+  const styles = {
+    frame: {
+      height: '100%',
+      width: '100%',
+      flex: isLandscape ? 2.4 : 0.8,
+      padding: 2,
+      backgroundColor: "#343434"
+    },
+    mainWindow: {
+      flex: 1,
+      backgroundColor: "#000"
+    }
+  }
 
   return (
-    <View style={{
-      flex: 1,
-      padding: 2,
-      aspectRatio: 1,
-      // width: {shortDim},
-      // height: {shortDim},
-      backgroundColor: "#343434"
-    }}>
+    <View style={styles.frame}>
       <View style={styles.mainWindow}>
         <Text style={{
           color: "white",
@@ -34,19 +38,19 @@ const MainUnit = () => {
           justifyContent: 'center'
           }}>
         <Text style={{color: sLeft ? "gold" : "gray"}}>
-          {`sLeft: ${sLeft ? 'Y' : 'N' }`}
+          sLeft
         </Text>
         <Text style={{color: "white"}}> | </Text>
         <Text style={{color: sUp ? "gold" : "gray"}}>
-          {`sUp: ${sUp ? 'Y' : 'N' }`}
+          sUp
         </Text>
         <Text style={{color: "white"}}> | </Text>
         <Text style={{color: eUp ? "gold" : "gray"}}>
-          {`eUp: ${eUp ? 'Y' : 'N' }`}
+          eUp
         </Text>
         <Text style={{color: "white"}}> | </Text>
         <Text style={{color: eRight ? "gold" : "gray"}}>
-          {`eRight: ${eRight ? 'Y' : 'N' }`}
+          eRight
         </Text>
         </View>
         <NavigationContainer overflow='hidden'>
@@ -55,12 +59,5 @@ const MainUnit = () => {
     </View>
   );
 };
-
-const styles = {
-  mainWindow: {
-    aspectRatio: 1,
-    backgroundColor: "#000"
-  }
-}
 
 export default MainUnit;

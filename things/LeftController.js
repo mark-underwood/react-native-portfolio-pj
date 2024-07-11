@@ -43,10 +43,14 @@ const LeftController = () => {
 const styles = EStyleSheet.create({
   container: {
     flex: 1,
-    borderTopLeftRadius: '1rem',
-    borderBottomLeftRadius: '1rem',
-    outerWidth: '100%',
-    outerHeight: '100%'
+    // borderStartStartRadius: '1rem',
+    borderTopLeftRadius: 64,
+    // borderEndStartRadius: '1rem',
+    borderBottomLeftRadius: 64,
+    borderBottomRightRadius: 100,
+    borderTopRightRadius: 100//,
+    // outerWidth: '100%',
+    // outerHeight: '100%'
   },
   row: {
     flex: 1,

@@ -16,7 +16,7 @@ const ActionButton = ({ title }) => {
             disabled
             style={styles.actionButtons}
         /> */}
-        <Text>
+        <Text style={styles.actionButtonLabel}>
             {title}
         </Text>
     </ImageBackground>

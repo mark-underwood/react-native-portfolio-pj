@@ -9,6 +9,9 @@ export const styles = {
     aspectRatio: 1//,
     // padding: 20
   },
+  actionButtonLabel: {
+    color: 'white'
+  },
   imageBackground: {
     flex: 1,
     alignItems: 'center',

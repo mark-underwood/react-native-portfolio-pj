@@ -44,6 +44,9 @@ export default function App() {
   const handleOrientationChange = (o) => {
     setOrientation(o.orientationInfo.orientation);
   };
+
+  const isLandscape =
+    ( orientation == 1 || orientation == 2 ) ? false : true;
   
   //////////
   // https://reactnative.dev/docs/usewindowdimensions
@@ -66,17 +69,17 @@ export default function App() {
   //////////
   // buttons holds the boolean state of all 'things' buttons.
   // s = start / Left Controller, e = end / Right Controller
-  const [buttons, setButtons] = useState({
-    sLeft: false,
-    sUp: false,
-    eUp: false,
-    eRight: false
-  }); // More action buttons such as fullscreen may be added later
+  // const [buttons, setButtons] = useState({
+  //   sLeft: false,
+  //   sUp: false,
+  //   eUp: false,
+  //   eRight: false
+  //}); // More action buttons such as fullscreen may be added later
 
   //////////
   // buttons object gets passed as a prop to MainUnit to register presses
-  const styles = StyleSheet.create({
-    container: {
+  const styles = EStyleSheet.create({
+    safeArea: {
       flex: 1,
       paddingTop: statusBarOffset,
       alignItems: 'center',
@@ -86,7 +89,15 @@ export default function App() {
       // width: ( orientation == 1 || orientation == 2 ) ? windowDimensions.width : windowDimensions.height//,
       // overflow: 'hidden'
     },
+    container: {
+      height: '100%',
+      width: '100%',
+      //flex: 1//,
+      aspectRatio: ( orientation == 1 || orientation == 2 ) ? '9/16' : '16/9'
+    },
     vertical: {
+      height: '100%',
+      width: '100%',
       flex: 1,
       // paddingTop: statusBarOffset,
       flexDirection: 'column',
@@ -98,7 +109,7 @@ export default function App() {
         flex: 1,
         flexDirection: 'row',
         // minWidth: { windowWidth },
-        maxWidth: ( orientation == 1 || orientation == 2 ) ? windowDimensions.width : windowDimensions.height,
+        // maxWidth: ( orientation == 1 || orientation == 2 ) ? windowDimensions.width : windowDimensions.height,
         alignItems: 'center',
         justifyContent: 'top'//,
         // overflow: 'hidden'
@@ -110,42 +121,37 @@ export default function App() {
   // EStyleSheet.build({ $primary-color: '#000' }); // example with SCSS
   EStyleSheet.build(); // DO NOT REMOVE even when empty.
 
-  return (<StrictMode>
-    <View style={styles.container}>
+  return (
+    <StrictMode>
       <Provider store={store}>
-        <View style={styles.vertical}>
-          {/* Main will show here in portrait mode */}
-          { (orientation == 1 || orientation == 2) && <MainUnit
-                // buttons={buttons}
-                style={{
-                  minHeight: (
-                  orientation == 1 || orientation == 2 ) ? (
-                    windowDimensions.height - statusBarOffset
-                  ) : ( windowDimensions.width - statusBarOffset )}}
-              /> }
-          <View style={{
-            flex: 1,
-            flexDirection: 'row',
-            aspectRatio: ( orientation == 1 || orientation == 2 ) ? 'auto' : '15/9',  // 15/9 16/9
-            width: ( orientation == 1 || orientation == 2 ) ? windowDimensions.width : windowDimensions.height,
-            alignItems: 'center',
-            justifyContent: 'top',
-            overflow: 'hidden'
-          }}>
-            {/* Left Controller */}
-            <LeftController />
-            {/* Main will show here in landscape mode */}
-            { (orientation == 3 || orientation == 4) && <MainUnit
-                // buttons={buttons}
-              /> }
-            {/* Right Controller */}
-            <RightController />
+        <View style={styles.safeArea}>
+          <View style={styles.container}>
+            <View style={styles.vertical}>
+              {/* Main will show here in portrait mode */}
+              { !isLandscape &&
+                <MainUnit
+                  isLandscape={isLandscape}
+                />
+              }
+              <View style={styles.horizontal}>
+                {/* Left Controller */}
+                <LeftController />
+                {/* Main will show here in landscape mode */}
+                { isLandscape &&
+                <MainUnit
+                  isLandscape={isLandscape}
+                />
+                }
+                {/* Right Controller */}
+                <RightController />
+              </View>
+            </View>
+            {/* <StatusBar style="auto" /> */}
           </View>
         </View>
-        {/* <StatusBar style="auto" /> */}
       </Provider>
-    </View>
-  </StrictMode>);
+    </StrictMode>
+  );
 }
 
 // // The following line with ternary operator is adapted from

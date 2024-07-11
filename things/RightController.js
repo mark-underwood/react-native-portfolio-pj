@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { useDispatch } from 'react-redux'; // update button states
 import EStyleSheet from 'react-native-extended-stylesheet';
-import EButtonRightLeft from '../components/actionButtons/EButtonRight';
 import EButtonUp from '../components/actionButtons/EButtonUp';
 import EButtonRight from '../components/actionButtons/EButtonRight';
 
