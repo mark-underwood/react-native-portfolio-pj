@@ -9,9 +9,11 @@ const LeftController = () => {
   
   return (
     <View style={styles.leftController}>
-      <Text style={{color: 'white', alignSelf: 'center'}}>\ L-Controller \</Text>
+      {/* <Text style={{color: 'white', alignSelf: 'center'}}>\ L-Controller \</Text> */}
       <View style={styles.row}>{/* row 1 */}
-        <SButtonLeft style={styles.col} />{/* row 1 | col 1 */}
+        <View style={styles.col}>{/* row 1 | col 1 */}
+          <SButtonLeft />
+        </View>
         <View style={styles.col}>{/* row 1 | col 2 */}
           {/* <Text> </Text> */}
         </View>
@@ -20,9 +22,17 @@ const LeftController = () => {
         <View style={styles.col}>{/* row 2 | col 1 */}
           {/* <Text> </Text> */}
         </View>
-        <SButtonUp style={styles.col} />{/* row 2 | col 2 */}
+        <View style={styles.col}>{/* row 2 | col 1 */}
+          <SButtonUp />{/* row 2 | col 2 */}
+        </View>
       </View>
       <View style={styles.row}>{/* row 3 */}
+        {/* intentionally blank - for now */}
+      </View>
+      <View style={styles.row}>{/* row 4 */}
+        {/* intentionally blank - for now */}
+      </View>
+      <View style={styles.row}>{/* row 5 */}
         {/* intentionally blank - for now */}
       </View>
     </View>
@@ -34,12 +44,14 @@ const styles = EStyleSheet.create({
     flex: 1,
     height: '100%',
     width: '100%',
+    padding: 8,
     borderStartStartRadius: 32,
     borderEndStartRadius: 32,
     borderTopLeftRadius: 32,
     borderBottomLeftRadius: 32,
     backgroundColor: '#370d11'
-  },row: {
+  },
+  row: {
     flex: 1,
     flexDirection: 'row'
   },

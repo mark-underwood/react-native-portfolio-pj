@@ -1,13 +1,14 @@
 export const styles = {
-  actionButtons: {
+  actionButton: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     color: '#4E4E4E',
-    width: '80%',
-    // height: '75%',
-    aspectRatio: 1//,
-    // padding: 20
+    borderRadius: 1024,
+    backgroundColor: '#303030',
+    aspectRatio: 1,
+    // padding: 20,
+    margin: 8
   },
   actionButtonLabel: {
     color: 'white'
@@ -15,7 +16,7 @@ export const styles = {
   imageBackground: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   }
 }
 

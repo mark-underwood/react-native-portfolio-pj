@@ -1,4 +1,4 @@
-import { Button, ImageBackground, Pressable, Text } from 'react-native';
+import { Pressable } from 'react-native';
 import { useDispatch } from "react-redux"; // send button actions to redux store
 import { updateButtonSUp } from './actionButtonsSlice';
 import ActionButton from './ActionButton';
@@ -12,7 +12,7 @@ const SButtonUp = () => {
         <Pressable
             onPressIn={() => dispatch(updateButtonSUp(true))}
             onPressOut={() => dispatch(updateButtonSUp(false))}
-            style={styles.actionButtons}
+            style={styles.actionButton}
         >
             <ActionButton title={title} />
         </Pressable>

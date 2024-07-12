@@ -9,20 +9,30 @@ const RightController = () => {
 
   return (
     <View style={styles.rightController}>
-      <Text style={{color: 'white', alignSelf: 'center'}}>/ R-Controller /</Text>
+      {/* <Text style={{color: 'white', alignSelf: 'center'}}>/ R-Controller /</Text> */}
       <View style={styles.row}>{/* row 1 */}
         <View style={styles.col}>{/* row 1 | col 1 */}
           {/* <Text> </Text> */}
         </View>
-        <EButtonRight style={styles.col} />{/* row 1 | col 2 */}
+        <View style={styles.col}>{/* row 1 | col 2 */}
+          <EButtonRight />{/* row 1 | col 2 */}
+        </View>
       </View>
       <View style={styles.row}>{/* row 2 */}
-        <EButtonUp style={styles.col} />{/* row 2 | col 1 */}
+        <View style={styles.col}>{/* row 2 | col 1 */}
+          <EButtonUp />{/* row 2 | col 1 */}
+        </View>
         <View style={styles.col}>{/* row 2 | col 2 */}
             {/* <Text> </Text> */}
         </View>
       </View>
       <View style={styles.row}>{/* row 3 */}
+        {/* intentionally blank - for now */}
+      </View>
+      <View style={styles.row}>{/* row 4 */}
+        {/* intentionally blank - for now */}
+      </View>
+      <View style={styles.row}>{/* row 5 */}
         {/* intentionally blank - for now */}
       </View>
     </View>
@@ -32,14 +42,16 @@ const RightController = () => {
 const styles = EStyleSheet.create({
   rightController: {
     flex: 1,
-      height: '100%',
-      width: '100%',
-      borderStartEndRadius: 32,
-      borderEndEndRadius: 32,
-      borderTopRightRadius: 32,
-      borderBottomRightRadius: 32,
-      backgroundColor: '#03333c'
-  },row: {
+    height: '100%',
+    width: '100%',
+    padding: 8,
+    borderStartEndRadius: 32,
+    borderEndEndRadius: 32,
+    borderTopRightRadius: 32,
+    borderBottomRightRadius: 32,
+    backgroundColor: '#03333c'
+  },
+  row: {
     flex: 1,
     flexDirection: 'row'
   },

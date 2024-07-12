@@ -81,6 +81,8 @@ export default function App() {
   const styles = EStyleSheet.create({
     safeArea: {
       flex: 1,
+      height: '100%',
+      width: '100%',
       paddingTop: statusBarOffset,
       alignItems: 'center',
       justifyContent: 'center',
@@ -92,7 +94,7 @@ export default function App() {
     container: {
       height: '100%',
       width: '100%',
-      //flex: 1//,
+      flex: 1,
       aspectRatio: ( orientation == 1 || orientation == 2 ) ? '9/16' : '16/9'
     },
     vertical: {

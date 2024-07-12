@@ -1,25 +1,21 @@
 import React from 'react';
-import { Button, ImageBackground, Text } from 'react-native';
+import { ImageBackground, View, Text } from 'react-native';
 import { styles, props } from './actionButtonStyles';
 
 const ActionButton = ({ title }) => {
     const actionButtonImage = '';
 
   return (
-    <ImageBackground
-        source={actionButtonImage}
-        style={styles.imageBackground}
-    >
-        {/* <Button
-            title={title}
-            color={props.color}
-            disabled
-            style={styles.actionButtons}
-        /> */}
-        <Text style={styles.actionButtonLabel}>
-            {title}
-        </Text>
-    </ImageBackground>
+    <View style={styles.actionButton}>
+        {/* <ImageBackground
+            source={actionButtonImage}
+            style={styles.imageBackground}
+        > */}
+            <Text style={styles.actionButtonLabel}>
+                {title}
+            </Text>
+        {/* </ImageBackground> */}
+    </View>
   )
 }
 

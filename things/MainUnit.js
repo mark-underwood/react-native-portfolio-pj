@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import { useSelector } from "react-redux";
 // import {
 //   sLeft, sUp, eUp, eRight
@@ -11,7 +11,7 @@ const MainUnit = (props) => {
   const { isLandscape } = props;
   const { sLeft, sUp, eUp, eRight } = useSelector((state) => state.actionButtons);
 
-  const styles = {
+  const styles = StyleSheet.create({
     frame: {
       height: '100%',
       width: '100%',
@@ -23,14 +23,12 @@ const MainUnit = (props) => {
       flex: 1,
       backgroundColor: "#000"
     }
-  }
+  });
 
   return (
     <View style={styles.frame}>
       <View style={styles.mainWindow}>
-        <Text style={{
-          color: "white",
-          alignSelf: 'center'}}>| Main Unit |</Text>
+        {/* <Text style={{color: "white", alignSelf: 'center'}}>| Main Unit |</Text> */}
         <View style={{
           flex: 1,
           flexDirection:'row',
