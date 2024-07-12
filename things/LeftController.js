@@ -8,14 +8,7 @@ import SButtonUp from '../components/actionButtons/SButtonUp';
 const LeftController = () => {
   
   return (
-    <View style={{
-      flex: 1,
-      height: '100%',
-      width: '100%',
-      borderStartStartRadius: 64,
-      borderEndStartRadius: 64,
-      backgroundColor: '#370d11'
-    }}>
+    <View style={styles.leftController}>
       <Text style={{color: 'white', alignSelf: 'center'}}>\ L-Controller \</Text>
       <View style={styles.row}>{/* row 1 */}
         <SButtonLeft style={styles.col} />{/* row 1 | col 1 */}
@@ -37,7 +30,16 @@ const LeftController = () => {
 };
 
 const styles = EStyleSheet.create({
-  row: {
+  leftController: {
+    flex: 1,
+    height: '100%',
+    width: '100%',
+    borderStartStartRadius: 32,
+    borderEndStartRadius: 32,
+    borderTopLeftRadius: 32,
+    borderBottomLeftRadius: 32,
+    backgroundColor: '#370d11'
+  },row: {
     flex: 1,
     flexDirection: 'row'
   },
@@ -46,9 +48,6 @@ const styles = EStyleSheet.create({
     aspectRatio: 1,
     alignItems: 'center',
     justifyContent: 'center'
-  },
-  actionButtons: {
-    padding: 10
   }
 });
 

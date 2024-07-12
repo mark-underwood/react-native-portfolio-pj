@@ -8,14 +8,7 @@ import EButtonRight from '../components/actionButtons/EButtonRight';
 const RightController = () => {
 
   return (
-    <View style={{
-      flex: 1,
-      height: '100%',
-      width: '100%',
-      borderStartEndRadius: 64,
-      borderEndEndRadius: 64,
-      backgroundColor: '#03333c'
-    }}>
+    <View style={styles.rightController}>
       <Text style={{color: 'white', alignSelf: 'center'}}>/ R-Controller /</Text>
       <View style={styles.row}>{/* row 1 */}
         <View style={styles.col}>{/* row 1 | col 1 */}
@@ -37,7 +30,16 @@ const RightController = () => {
 };
 
 const styles = EStyleSheet.create({
-  row: {
+  rightController: {
+    flex: 1,
+      height: '100%',
+      width: '100%',
+      borderStartEndRadius: 32,
+      borderEndEndRadius: 32,
+      borderTopRightRadius: 32,
+      borderBottomRightRadius: 32,
+      backgroundColor: '#03333c'
+  },row: {
     flex: 1,
     flexDirection: 'row'
   },
@@ -46,9 +48,6 @@ const styles = EStyleSheet.create({
     aspectRatio: 1,
     alignItems: 'center',
     justifyContent: 'center'
-  },
-  actionButtons: {
-    padding: 10
   }
 });
 
