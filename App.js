@@ -11,8 +11,6 @@ import {
  } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import Constants from 'expo-constants';
-import windowSize from './utils/windowSize';
-import getShortDim from './utils/getShortDim';
 import LeftController from './things/LeftController';
 import MainUnit from './things/MainUnit';
 import RightController from './things/RightController';
@@ -45,8 +43,7 @@ export default function App() {
     setOrientation(o.orientationInfo.orientation);
   };
 
-  const isLandscape =
-    ( orientation == 1 || orientation == 2 ) ? false : true;
+  const isLandscape = ( orientation == 1 || orientation == 2 ) ? false : true;
   
   //////////
   // https://reactnative.dev/docs/usewindowdimensions
@@ -95,26 +92,21 @@ export default function App() {
       height: '100%',
       width: '100%',
       flex: 1,
-      aspectRatio: ( orientation == 1 || orientation == 2 ) ? '9/16' : '16/9'
+      aspectRatio: isLandscape ? '16/9' : '9/16'
     },
     vertical: {
       height: '100%',
       width: '100%',
       flex: 1,
-      // paddingTop: statusBarOffset,
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center'//,
-      // overflow: 'hidden'
+      justifyContent: 'center'
     },
     horizontal: {
         flex: 1,
         flexDirection: 'row',
-        // minWidth: { windowWidth },
-        // maxWidth: ( orientation == 1 || orientation == 2 ) ? windowDimensions.width : windowDimensions.height,
         alignItems: 'center',
-        justifyContent: 'top'//,
-        // overflow: 'hidden'
+        justifyContent: 'top'
     }
   }); 
   
@@ -148,7 +140,7 @@ export default function App() {
                 <RightController />
               </View>
             </View>
-            {/* <StatusBar style="auto" /> */}
+            <StatusBar style="auto" />
           </View>
         </View>
       </Provider>
